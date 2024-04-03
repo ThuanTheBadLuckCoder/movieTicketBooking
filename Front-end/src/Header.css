@@ -1,0 +1,88 @@
+/* Header.css */
+.header {
+    background-color: #343a40;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  
+  .logo {
+    
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    margin-left: 1rem; /* Khoảng cách giữa các mục navbar */
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none; /* Gỡ bỏ gạch chân của liên kết */
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline; /* Thêm gạch chân khi hover */
+  }
+  
+  .user-interaction {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-interaction span {
+    margin-right: 1rem; /* Khoảng cách giữa chào mừng và nút đăng xuất */
+  }
+  
+  .user-interaction button {
+    background-color: #f0ad4e; /* Màu nền cho nút đăng xuất */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer; /* Thay đổi con trỏ chuột để báo hiệu có thể click */
+  }
+  
+  .user-interaction button:hover {
+    background-color: #ec971f; /* Màu khi hover */
+  }
+
+  
+/* Header.css */
+/* Các styles cơ bản như đã được cung cấp trước đây... */
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+  
+    .navbar li {
+      text-align: center;
+      margin: 5px 0;
+    }
+  
+    .user-interaction {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .user-interaction span {
+      margin-bottom: 5px;
+    }
+  
+    .user-interaction button {
+      width: 100%;
+    }
+  }
+  
