@@ -1,0 +1,117 @@
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    unicode-bidi: isolate;
+}
+
+@media screen and (min-width: 1400px) {
+    .header-cnema {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #001529;
+    padding: 20px;
+}
+
+    .header-cnema .container {
+        display: flex;
+        flex-direction: row;
+        width: 1400px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+
+
+    .header-cnema .container > div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+
+    .header-cnema .child-navbar {
+        color: #fff;
+    }
+
+    .header-cnema .container .child {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-cnema .container .child-1 {
+        width: 20%;
+    }
+    .header-cnema .container .child-2 {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header-cnema .container .child-3 {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-evenly;
+    }
+
+    .header-cnema .container .child-2 .navbar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+
+    }
+
+    .header-cnema .container .child-2 .navbar .child-navbar:hover {
+        color: #eeff00;
+        
+    }
+
+    .header-cnema .container .child-2 .navbar .child-navbar {
+        display: flex;
+        cursor: pointer;
+        font-size: 25px;
+        /* font-family: "Roboto variant0", Tofu; */
+        font-weight: 500;
+        color: #fff;
+        transition: color 0.5s ease;
+    }
+
+    .header-cnema .sign-in, .header-cnema .user-name {
+        padding: 2px 15px;
+        background-color: #fff;
+        border: 1px solid;
+        border-image: linear-gradient(to bottom, #00FF99, #00CBF8);
+        border-image-slice: 1;
+        display: flex;
+    }
+    .header-cnema .signin-button, .header-cnema .hello-user {
+        border-radius: 1px;
+        overflow: hidden;
+        display: flex;
+    }
+    .header-cnema .user-signin {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto, sans-serif';
+    }
+
+}
