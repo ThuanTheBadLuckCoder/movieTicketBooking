@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './YouMayInterest.css';
 import Poster from '../Assets/Poster-YMT.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 const YouMayInterest = () => {
     const RepeatArray = 6;
@@ -26,7 +29,9 @@ const YouMayInterest = () => {
           <h2>You May Interest</h2>
         </div>
         <div className="body-ymt">
-        <button className="prev" onClick={prevSlide} style={{ display: currentIndex === 0 ? 'none' : 'block' }}>Prev</button>
+        <button className="prev" onClick={prevSlide} style={{ display: currentIndex === 0 ? 'none' : 'block' }}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
           <div className="slider">
             <div className="slides" style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}>
               {[...Array(RepeatArray)].map((_, index) => (
@@ -46,7 +51,9 @@ const YouMayInterest = () => {
             </div>
           </div>
           
-          <button className="next" onClick={nextSlide} style={{ display: currentIndex === 3 ? 'none' : 'block' }}>Next</button>
+          <button className="next" onClick={nextSlide} style={{ display: currentIndex === 3 ? 'none' : 'block' }}>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
         </div>
       </div>
     </div>

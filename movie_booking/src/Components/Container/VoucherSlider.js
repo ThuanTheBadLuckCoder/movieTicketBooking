@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './VoucherSlider.css';
-import Poster from '../Assets/Poster-NhaBaNu.png';
+import Voucher from '../Assets/VoucherSlider.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -38,14 +38,7 @@ const VoucherSlider = () => {
                             {RepeatArray.map((item, index) => (
                                 <div key={index} className="slide" style={{ flex: `0 0 ${slideWidth}%`, maxWidth: `${slideWidth}%` }}>
                                     <div className="poster">
-                                        <img src={Poster} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <span>Nha Ba Nu</span>
-                                    </div>
-                                    <div className="button-sd-bytn">
-                                        <button className="sd">See Details</button>
-                                        <button className="bytn">Buy Your Ticket Now</button>
+                                        <img src={Voucher} alt="" />
                                     </div>
                                 </div>
                             ))}

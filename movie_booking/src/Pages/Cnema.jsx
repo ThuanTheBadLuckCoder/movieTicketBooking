@@ -1,5 +1,6 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar';
+import Header from '../Components/Navbar/Navbar';
+import Footer from '../Components/Navbar/Footer'
 import SearchingBar from '../Components/Navbar/SearchingBar'
 import FilmSlider from '../Components/Container/FilmSlider';
 import VoucherSlider from '../Components/Container/VoucherSlider';
@@ -14,7 +15,7 @@ const Cnema = () => {
   return (
     <div className="cnema">
       <div className="header">
-        <Navbar />
+        <Header />
       </div>
       <div className="homepage">
         <SearchingBar />
@@ -24,7 +25,7 @@ const Cnema = () => {
         <YouMayInterst />
       </div>
       <div className="footer">
-        
+        <Footer />
       </div>
       
       

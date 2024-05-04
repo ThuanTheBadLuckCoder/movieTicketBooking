@@ -7,7 +7,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 const FilmSlider = () => {
     const RepeatArray = Array.from({ length: 9 }, (_, i) => i + 1); // Tạo mảng chứa 9 phần tử
     const [currentIndex, setCurrentIndex] = useState(0);
-    const slidesToShow = 3; // Số lượng thẻ div được hiển thị cùng lúc
+    const slidesToShow = 4; // Số lượng thẻ div được hiển thị cùng lúc
 
     const nextSlide = () => {
         if (currentIndex < RepeatArray.length - slidesToShow) {
@@ -31,7 +31,7 @@ const FilmSlider = () => {
                 </div>
                 <div className="body-fps">
                     <button className="prev" onClick={prevSlide} style={{ display: currentIndex === 0 ? 'none' : 'block' }}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
+                    <FontAwesomeIcon icon={faArrowLeft} />
                     </button>
                     <div className="slider" style={{ overflowX: 'hidden' }}>
                         <div className="slides" style={{ display: 'flex', transition: 'transform ease-out 0.45s', transform: `translateX(-${currentIndex * slideWidth}%)` }}>
