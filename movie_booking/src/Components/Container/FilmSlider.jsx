@@ -1,60 +1,63 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./CardSlider.css";
-import Poster from '../Assets/Poster-NhaBaNu.png'
+import React, { useState } from 'react';
+import './CardSlider.css';
+import Poster from '../Assets/Poster-NhaBaNu.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-function FilmSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1
+
+const FilmSlider = () => {
+    const RepeatArray = 6;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    if (currentIndex < 4) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
   return (
-    <div className="Film slider-card">
-      <div className="slider-container">
-        <Slider {...settings}>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 1</h3>
-            <div className="buttons sd-bytn">
-              <button className="button sd">
-                <a href="#">See Details</a>
-              </button>
-              <button className="button bytn">
-                <a href="#">Buy Your Ticket Now</a>
-              </button>
+    <div className="film-poster-slider">
+      <div className="container-fps">
+        <div className="title">
+          <h2>Hot Film</h2>
+        </div>
+        <div className="body-fps">
+        <button className="prev" onClick={prevSlide} style={{ display: currentIndex === 0 ? 'none' : 'block' }}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+          <div className="slider">
+            <div className="slides" style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}>
+              {[...Array(RepeatArray)].map((_, index) => (
+                <div key={index} className="slide">
+                  <div className="poster">
+                    <img src={Poster} alt="" />
+                  </div>
+                  <div className="info">
+                    <span>Nha Ba Nu</span>
+                  </div>
+                  <div className="button-sd-bytn">
+                    <button className="sd">See Details</button>
+                    <button className="bytn">Buy Your Ticket Now</button>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 2</h3>
-          </div>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 3</h3>
-          </div>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 4</h3>
-          </div>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 5</h3>
-          </div>
-          <div className="Poster-Slider">
-            <img src={Poster} alt="" className="Poster-Film"/>
-            <h3>Film moi nhat 6</h3>
-          </div>
           
-        </Slider>
+          <button className="next" onClick={nextSlide} style={{ display: currentIndex === 3 ? 'none' : 'block' }}>
+          <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
+      </div>
     </div>
-    </div>
-    
   );
-}
+};
 
 export default FilmSlider;

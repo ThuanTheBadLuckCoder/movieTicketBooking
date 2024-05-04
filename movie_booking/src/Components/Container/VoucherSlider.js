@@ -1,42 +1,63 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./VoucherSlider.css";
-import Voucher from '../Assets/VoucherSlider.png'
+import React, { useState } from 'react';
+import './YouMayInterest.css';
+import Poster from '../Assets/Poster-NhaBaNu.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-function VoucherSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+
+const VoucherSlider = () => {
+  const RepeatArray = 6;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    if (currentIndex < 4) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
+  };
+
   return (
-    <div className="Voucher slider-card">
-      <div className="slider-container">
-        <Slider {...settings}>
-          <div className="Voucher-Slider">
-            <img src={Voucher} alt="" className="Voucher-Film"/>
+    <div className="film-poster-slider">
+      <div className="container-fps">
+        <div className="title">
+          <h2>Hot Film</h2>
+        </div>
+        <div className="body-fps">
+        <button className="prev" onClick={prevSlide} style={{ display: currentIndex === 0 ? 'none' : 'block' }}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+          <div className="slider">
+            <div className="slides" style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}>
+              {[...Array(RepeatArray)].map((_, index) => (
+                <div key={index} className="slide">
+                  <div className="poster">
+                    <img src={Poster} alt="" />
+                  </div>
+                  <div className="info">
+                    <span>Nha Ba Nu</span>
+                  </div>
+                  <div className="button-sd-bytn">
+                    <button className="sd">See Details</button>
+                    <button className="bytn">Buy Your Ticket Now</button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="Voucher-Slider">
-            <img src={Voucher} alt="" className="Voucher-Film"/>
-          </div>
-          <div className="Voucher-Slider">
-            <img src={Voucher} alt="" className="Voucher-Film"/>
-          </div>
-          <div className="Voucher-Slider">
-            <img src={Voucher} alt="" className="Voucher-Film"/>
-          </div>
-          <div className="Voucher-Slider">
-            <img src={Voucher} alt="" className="Voucher-Film"/>
-          </div>
-        </Slider>
+          
+          <button className="next" onClick={nextSlide} style={{ display: currentIndex === 3 ? 'none' : 'block' }}>
+          <FontAwesomeIcon icon={faArrowRight} />
+          </button>
+        </div>
+      </div>
     </div>
-    </div>
-    
   );
-}
+};
 
 export default VoucherSlider;
