@@ -1,140 +1,83 @@
-.film-poster-slider {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    padding: 20px 0;
-
+.voucher-slider {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.container-fps {
-    position: relative;
-    width: 1400px;
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-
+.container-vou{
+  position: relative;
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .body-fps {
-    overflow: visible;
-    position: relative;
-  }
-  
-  .slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease;
-    margin: unset;
-    padding: unset;
-  }
-  
-  .slide {
-    flex: 0 0 33.333%;
-    padding: 0 10px !important;
-    height: 800px;
-  }
-  
-  .poster img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-  }
-
-  .slide .info {
-    font-weight: 700;
-    font-size: 25px;
-    text-align: center;
-    font-family: 'Inter, sans-serif';
-    color: #333;
-
-
-  }
-  .slide .button-sd-bytn {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
 }
-  .slide .button-sd-bytn button {
-    border: none;
-    border-radius: 5px;
-    padding: 5px 20px;
-    box-shadow: 0 0 10px 0 #333;
-    font-weight: 500;
-  }
-  .slide .button-sd-bytn .sd {
-    background-color: #001529;
-    border: none;
-    color: #fff;
 
-  }
+.body-vou{
+  overflow: visible;
+  position: relative;
+}
 
-  .slide .button-sd-bytn .bytn {
-    
-    background-color: #00CBF8;
-    color: #fff;
-    
-  }
-  
-  
-  
-  .info {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .button-sd-bytn {
-    text-align: center;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0);
-    color: white;
-    border: none;
-    border-radius: 500px;
-    padding: unset;
-    width: 75px;
-    height: 75px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 1);
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-  }
-  
-  .prev {
-    left: -100px;
-  }
-  
-  .next {
-    right: -100px;
-  }
-  
+.voucher-slider .slide {
+  flex: 0 0 33.333%;
+  padding: 0 10px;
+}
 
-  .svg-inline--fa {
-    display: var(--fa-display, inline-block);
-    height: 2em;
-    overflow: visible;
-    vertical-align: 0em;
+.poster img {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.button-sd-bytn {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  z-index: 1000;
+  padding: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: -100px;
+}
+
+.next {
+  right: -100px;
 }
